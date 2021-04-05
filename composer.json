@@ -1,0 +1,80 @@
+{
+    "name": "lmuestak/laravel-jwt-auth",
+    "description": "JWT authentication for Laravel and Lumen",
+    "keywords": [
+        "jwt",
+        "json web token",
+        "laravel",
+        "auth",
+        "authentication",
+        "spa"
+    ],
+    "authors": [
+        {
+            "name": "Leon Müstak",
+            "email": "leon.muestak@gmx.de",
+            "homepage": "https://www.yellowblue.org",
+            "role": "Software Engineer"
+        }
+    ],
+    "homepage": "https://github.com/lmuestak/laravel-jwt-auth",
+    "support": {
+        "source": "https://github.com/lmuestak/laravel-jwt-auth",
+        "issues": "https://github.com/lmuestak/laravel-jwt-auth/issues"
+    },
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "config": {
+        "sort-packages": true
+    },
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.2|^8.0",
+        "illuminate/auth": "^6|^7|^8|",
+        "illuminate/contracts": "^6|^7|^8|",
+        "illuminate/http": "^6|^7|^8|",
+        "illuminate/support": "^6|^7|^8|",
+        "lcobucci/jwt": "^4",
+        "namshi/jose": "^7",
+        "nesbot/carbon": "^2"
+    },
+    "require-dev": {
+        "illuminate/console": "^6|^7|^8|",
+        "illuminate/database": "^6|^7|^8|",
+        "illuminate/routing": "^6|^7|^8|",
+        "mockery/mockery": "^1",
+        "phpunit/phpunit": "^6|^7|^8|^9",
+        "yoast/phpunit-polyfills": "^0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Muestak\\Jwt\\": "sources//"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Muestak\\Jwt\\Test\\": "tests//"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "aliases": {
+                "JwtAuth": "Muestak\\Jwt\\Facades\\JwtAuth",
+                "JwtFactory": "Muestak\\Jwt\\Facades\\JwtFactory"
+            },
+            "providers": [
+                "Muestak\\Jwt\\Providers\\JwtServiceProvider"
+            ]
+        }
+    },
+    "funding": [
+        {
+            "type": "paypal",
+            "url": ""
+        }
+    ],
+    "scripts": {
+        "test": "phpunit --colors=always",
+        "test:ci": "composer test -- --verbose --coverage-text --coverage-clover=coverage.xml"
+    }
+}
